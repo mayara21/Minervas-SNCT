@@ -20,10 +20,11 @@ GameObject:
   m_Component:
   - component: {fileID: 4351143947093142}
   - component: {fileID: 212657985662119992}
-  - component: {fileID: 61660346990759588}
   - component: {fileID: 50284781283601280}
   - component: {fileID: 114140448224734334}
   - component: {fileID: 95621275966379916}
+  - component: {fileID: 61625442829769316}
+  - component: {fileID: 61553385981501566}
   m_Layer: 0
   m_Name: Player
   m_TagString: Untagged
@@ -38,8 +39,8 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1419689397127264}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -13.508001, y: 2.21, z: 0}
-  m_LocalScale: {x: 0.852, y: 1.503, z: 1}
+  m_LocalPosition: {x: -13.613, y: 1.839, z: 0}
+  m_LocalScale: {x: 0.49525, y: 0.52794206, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 0
@@ -64,7 +65,7 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 0
   m_Constraints: 4
---- !u!61 &61660346990759588
+--- !u!61 &61553385981501566
 BoxCollider2D:
   m_ObjectHideFlags: 1
   m_CorrespondingSourceObject: {fileID: 0}
@@ -76,18 +77,43 @@ BoxCollider2D:
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: 0, y: 0}
+  m_Offset: {x: 0.62884825, y: 0.8044188}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
-    oldSize: {x: 1, y: 1}
+    oldSize: {x: 3.76, y: 5.2}
     newSize: {x: 1, y: 1}
     adaptiveTilingThreshold: 0.5
     drawMode: 0
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 1, y: 1}
+  m_Size: {x: 2.044963, y: 1.9608722}
+  m_EdgeRadius: 0
+--- !u!61 &61625442829769316
+BoxCollider2D:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1419689397127264}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: -0.5488112, y: -1.179815}
+  m_SpriteTilingProperty:
+    border: {x: 0, y: 0, z: 0, w: 0}
+    pivot: {x: 0.5, y: 0.5}
+    oldSize: {x: 3.76, y: 5.2}
+    newSize: {x: 1, y: 1}
+    adaptiveTilingThreshold: 0.5
+    drawMode: 0
+    adaptiveTiling: 0
+  m_AutoTiling: 0
+  serializedVersion: 2
+  m_Size: {x: 2.067832, y: 2.5400538}
   m_EdgeRadius: 0
 --- !u!95 &95621275966379916
 Animator:
@@ -98,7 +124,7 @@ Animator:
   m_GameObject: {fileID: 1419689397127264}
   m_Enabled: 1
   m_Avatar: {fileID: 0}
-  m_Controller: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 8f5deecd8efe141afa691d5195a3adac, type: 2}
   m_CullingMode: 0
   m_UpdateMode: 0
   m_ApplyRootMotion: 0
@@ -119,7 +145,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   speed: 5
-  jumpThrust: 15
+  jumpThrust: 20
   stunTime: 2
   playerID: 1
 --- !u!212 &212657985662119992
@@ -157,7 +183,7 @@ SpriteRenderer:
   m_SortingLayerID: 2041883639
   m_SortingLayer: 1
   m_SortingOrder: 0
-  m_Sprite: {fileID: 21300000, guid: 5f89a0f33a3d164498022ebc29d35f4e, type: 3}
+  m_Sprite: {fileID: 21300000, guid: ac77e72c82f6e47d2936267dfa26b578, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0

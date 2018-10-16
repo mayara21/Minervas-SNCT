@@ -7,6 +7,8 @@ public class MyPlayer : MonoBehaviour {
 
 	#region Events
 	public event Action OnGetCoin;
+    public event Action SaveScore;
+    public event Action OnHitObstacle;
 	#endregion
 
 	#region Components
@@ -16,14 +18,17 @@ public class MyPlayer : MonoBehaviour {
 	#endregion
 
 	#region Números Mágicos
-	[SerializeField] private float speed = 5f;
-	[SerializeField] private float jumpThrust = 15f;
+	[SerializeField] private float speed = 8f;
+	[SerializeField] private float jumpThrust = 23f;
 	[SerializeField] private float stunTime = 2f;
 	[SerializeField] private int playerID;
+    [SerializeField] private bool patriarchyVictim;
 
 	#endregion
 
 	private bool canMove = true;
+    private bool isJumping = false;
+    private bool canSave = true;
 	
 	private void Start ()
 	{
@@ -45,7 +50,11 @@ public class MyPlayer : MonoBehaviour {
 
 	private void Move()
 	{
+        isJumping = Mathf.Abs(myRigidBody2D.velocity.y) > 0.0;
+
 		myRigidBody2D.velocity = new Vector2(speed, myRigidBody2D.velocity.y);
+        //if (canMove && !isJumping) print("oi");
+        myAnimator.SetBool("Running", canMove && !isJumping);
 	}
 
 	private void Jump()
@@ -62,6 +71,12 @@ public class MyPlayer : MonoBehaviour {
 			if(OnGetCoin != null)
 				OnGetCoin();
 		} 
+
+        if (other.gameObject.CompareTag("Finish Line") && canSave) {
+            canMove = false;
+            canSave = false;
+            if (SaveScore != null) SaveScore();
+        }
 	}
 
 	private void OnCollisionEnter2D(Collision2D other)
@@ -76,7 +91,9 @@ public class MyPlayer : MonoBehaviour {
 	{
 		canMove = false;
 		Destroy(other.gameObject);
+        if (OnHitObstacle != null) OnHitObstacle();
 		yield return new WaitForSeconds(stunTime);
 		canMove = true;
 	}
+
 }
